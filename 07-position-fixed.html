@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #parent, #other {
+      border:5px solid tomato;
+    }
+    #large {
+      height: 10000px;
+      background-color: #c37d7a;
+    }
+    #me {
+      background-color: black;
+      color: white;
+      position: fixed;
+      left: 0px;
+      top: 0px;
+    }
+    #my-footer {
+      background-color: black;
+      color: white;
+      position:fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      text-align: center;
+    }
+    #my-header {
+      background-color: black;
+      color: white;
+      position:fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      text-align: center;
+    }
+    body {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      /* fixed된 element로 인하여 내부 컨텐츠가 가려지지 않도록 처리 */
+    }
+  </style>
+</head>
+<body>
+  <div id="other">other</div>
+  <div id="parent">
+    parent
+    <div id="me">me</div>
+  </div>
+  <div id="large">large</div>
+
+  <div id="my-header">hi</div>
+  <div id="my-footer">bye</div>
+</body>
+</html>

@@ -63,3 +63,28 @@ parent에 border가 있으면, 정확한 사이즈와 위치를 알 수 있다. 
 앞의 case와 동일하게 큰 마진값을 택하게 된다.
 
 ## position - relative, static
+element는 left, right, top, bottom 등의 키워드로 위치를 지정할 수 있다.  
+하지만, position 값을 지정하지 않으면, left/top 등의 값을 바꾸어도 element의 위치가 변경되지 않는다.  
+position의 default 값은 static인데, 이를 relative로 바꾸어야 위치 변경 키워드가 동작한다.  
+static은 left/top 등의 offset값을 무시하고, 자기가 있어야 할 고정적 위치를 지키고 있는 옵션이다.
+
+## position - absolute
+absolute는 절대 위치를 의미한다.  
+relative는 부모 tag에 대한 위치이지만, absolute는 html 문서 전체에 대한 절대적 위치이다.  
+### 주의할 점
+1. 부모-자식 관계의 영향도 감소
+    - position에 absolute를 설정하고, left나 top값을 주지 않는다면, 부모의 위치 바로 아래가 자신의 absolute 위치가 된다는 것이다. 왜냐하면 left, top 값의 default값이 0이 아니라, 본인이 있기로 기대되는 장소의 값이기 때문이다.
+    - 또한, position이 absolute가 되는 순간, 부모 element와의 관계가 소원(?)해진다. 그래서 부모 element의 영역 안에는 자식 element의 공간이 없게 되어, 박스 사이즈도 마치 자식 element가 없는 것 처럼 보이게 된다.
+    - 자식 element 또한, 부모의 size를 inherit받지 않고 자기 content만큼의 박스만 가지게 된다. 따라서, 자식 element의 크기를 지정해주고 싶다면, 자식 element에 직접 값을 할당해주어야 한다.
+1. 부모의 position이 relative일 때
+    - 부모의 position이 static이고, 자식의 position이 absolute라면, 문서 전체 기준으로 element의 offset값이 적용된다.
+    - 부모의 position이 relative이고, 자식의 position이 absolute라면, 부모의 위치를 기준으로 element의 offset값이 적용된다.
+1. 부모의 position은 지정된 값이 없는 경우
+    - 부모의 position이 지정된 값이 없다는 것은 default값인 static이라는 것이다.
+    - position이 absolute인 자식 element는 static은 조상 element는 모두 무시하기 때문에, 계속 윗 세대로 가면서 position이 static이 아닌 값이 있을때까지 position값을 탐색한다.
+    - static이 아닌 조상이 발견되면, 그것을 기준으로 자신의 위치를 결정한다.
+
+## position-fixed
+fixed는 absolute와 비슷한 동작은 하는것 처럼 보일 수 있다. 페이지의 세로 높이가 한페이지를 넘어가지 않는다면, 동일한 동작을 할 수 있다.  
+그러나 페이지 크기가 커서 스크롤이 발생하게 되었을 때, fixed는 스크롤을 하더라도, 고정된 위치에 있게 된다.  
+width와 height값을 지정하지 않는다면, 부모 element와 관계 없이, 딱 자기 크기만큼의 박스만 가지게 된다.

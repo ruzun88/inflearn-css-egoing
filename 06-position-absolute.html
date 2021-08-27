@@ -6,26 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    html{
-      border: 1px solid gray;
-    }
-    div{
+    #parent, #other, #grand{
       border:5px solid tomato;
-      margin:10px;
+    }
+    #grand {
+      position: static;
     }
     #me {
-      /* position 없이 left / top 위치를 지정해도 값이 무시된다. */
-      position:relative;
-      left: 100px;
-      top: 100px;
+      background-color: black;
+      color: white;
+      position: absolute;
+      left: 0px;
+      top: 0px;
     }
   </style>
 </head>
-<body>
+<!-- <body>
   <div id="other">other</div>
   <div id="parent">
     parent
     <div id="me">me</div>
+  </div> -->
+  <div id="other">other</div>
+  <div id="grand">
+    grand
+    <div id="parent">
+      parent
+      <div id="me">me</div>
+    </div>
   </div>
 </body>
 </html>

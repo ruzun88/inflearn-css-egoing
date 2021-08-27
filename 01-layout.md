@@ -57,3 +57,9 @@ parent에 border가 있으면, 정확한 사이즈와 위치를 알 수 있다. 
 그런데, border를 없애는 순간, 마진이 겹쳐버린다!  
 적용되는 마진값:
 - max(A.margin, B.margin)
+
+### 3번 Case
+동등한 Level의 두 element A, B가 있다. 시각적인 효과가 없으면, 마진 겹침이 일어난다. A는 빈 element, B에는 유효한 element가 있으면, A와 B사이에는 마진 겹침이 일어난다는 것이다.  
+앞의 case와 동일하게 큰 마진값을 택하게 된다.
+
+## position - relative, static

@@ -9,20 +9,24 @@
     .container {
       background-color: powderblue;
       display: flex;
-      /* flex-direction의 기본 값 */
-      /* flex-direction: row; */
-
-      /* 반대쪽으로 정렬하기 */
-      /* flex-direction: row-reverse; */
-
-      /* 컬럼으로 정렬하기 */
-      flex-direction: column;
+      flex-direction: row;
       height: 300px;
     }
     .item {
       background-color: tomato;
       color: white;
       border: 1px solid white;
+      /* flex-grow: 1; */
+    }
+    .item:nth-child(1) {
+      flex-basis: 500px;
+      flex-shrink: 1;
+      /* flex-grow: 10; */
+    }
+    .item:nth-child(2) {
+      flex-basis: 500px;
+      flex-shrink: 2;
+      /* flex-grow: 10; */
     }
   </style>
 </head>

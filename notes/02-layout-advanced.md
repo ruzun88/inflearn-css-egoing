@@ -33,3 +33,17 @@ grow값의 지정 없이, flex-basis 값에 크기를 지정해 주면, 일반�
 
 ## holy grail layout
 holy grail layout은 header와 footer를 상하단에 가지며, 가운데 컨텐츠에는 navi, main, ad가 있는 형태를 의미한다.
+
+## flex의 여러 속성들
+(강의자료 보기)[https://opentutorials.org/module/2367/13526]
+### container에 부여하는 속성
+- flex-direction : item들의 정렬 방향 (기본값은 row)
+- flex-wrap : 컨텐츠의 크기에 따라 자동으로 줄 바꿈(기본값은 nowrap)
+- align-items: item의 높이 값을 정하는 방법 (기본값은 stretch, 컨테이너의 높이만큼 모두 커지게 만듦)
+- justify-content: 수평과 관련된 속성 (direction이 row일 때.)
+- align-content: align-items와 비슷함. align-items는 컨텐츠 전체를 움직이는 속성이라 하면, align-content는 한 줄에 있는 item을 하나의 그룹으로 묶고, 그 그룹을 정렬하는 방법을 나타낸다.
+
+### item에 부여하는 속성
+- align-self: 하나의 항목에 대해서만 다른 정렬을 하고 싶을 때 사용
+- flex: flex-grow, flex-shrink, flex-basis를 축약한 속성
+- order: item의 순서를 바꾸고 싶을 때 사용

@@ -47,3 +47,15 @@ holy grail layout은 header와 footer를 상하단에 가지며, 가운데 컨�
 - align-self: 하나의 항목에 대해서만 다른 정렬을 하고 싶을 때 사용
 - flex: flex-grow, flex-shrink, flex-basis를 축약한 속성
 - order: item의 순서를 바꾸고 싶을 때 사용
+
+## float
+본문에 이미지를 삽입하는데 가장 많이 사용됨  
+이미지의 경우, block content라서 row 전체를 먹고 있음. 하지만, float: left 속성을 할당해주면, 이미지는 왼쪽에 떠 있고, 그 다음 item들이 img 옆 남는 공간에 배치가 되기 시작함. 심지어 하나의 item으로 img의 폭이 다 차지 않는다면, 그 다음 item도 남는 옆 공간에 배치가 됨  
+만약 이를 원하지 않는다면, style값에 clear:both;를 할당해 주면 됨
+
+## multi column
+신문처럼, 여러개의 column으로 나타낸 모양이다.  
+column을 나타내는 방법은 여러가지다.  
+- column-count : 단의 수를 강제로 지정, 폭은 자율에 맡김
+- column-width : 단의 폭을 지정하여, 수는 자동으로 자율에 맡김
+- 두 가지 다 사용 : width를 되도록 지키되, 최대 column-count개수만큼만 생성됨

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    a {
+      font-size: 3rem;
+      display: inline-block;
+      transition-property: all;
+      transition-duration: 1s;
+      transition-delay: 0.1s;
+      transition-timing-function:ease-in-out;
+    }
+    a:active { /* 클릭 했을 때 */
+      transform: translate(10px, 20px);
+      font-size: 2rem;
+    }
+    div {
+      background-color: black;
+      color: white;
+      padding: 10 px;
+      width: 100px;
+      height: 100px;
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    div:hover {
+      height: 200px;
+      color: black;
+      background-color: lightgray;
+    }
+  </style>
+</head>
+<body>
+  <a href="#">click</a>
+  <div>
+    TRANSITION
+  </div>
+</body>
+</html>
